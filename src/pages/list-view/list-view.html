@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    
+    <button ion-item *ngFor="let item of items" (click)="goToDetail($event, item)">
+      {{item.id}}
+      <div class="item-note" item-right>
+        {{item.title}}
+      </div>
+    </button>
+</ion-content>

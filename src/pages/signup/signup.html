@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Create an Account
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding style="background: url(https://s3.amazonaws.com/ionic-io-static/2pK3RntzRYmqQAShuuDf_Tipi-At-The-Sawtooth-Mountains-Under-The-Milky-Way-4-x-6-1.jpg) no-repeat center;background-size:cover;">
+  <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
+
+    <div>
+        <img src="https://s3.amazonaws.com/ionic-io-static/yVXLM0XeR9W04YOK5Pts_Magritte-96.png" style="display: block; width: 40%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+    <h1 style="color:#FFFFFF;font-weight:lighter;text-align:center;">Tribe</h1>
+
+
+    <ion-item>
+      <!-- <ion-label stacked>Email</ion-label> -->
+      <ion-input formControlName="name" type="text" placeholder="Your name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <!-- <ion-label stacked>Email</ion-label> -->
+      <ion-input formControlName="email" type="email" placeholder="Your email address"
+        [class.invalid]="!signupForm.controls.email.valid && signupForm.controls.email.dirty"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid  && signupForm.controls.email.dirty">
+      <p>Please enter a valid email.</p>
+    </ion-item>
+
+    <ion-item>
+      <!-- <ion-label stacked>Password</ion-label> -->
+      <ion-input formControlName="password" type="password"  placeholder="Your password"
+        [class.invalid]="!signupForm.controls.password.valid && signupForm.controls.password.dirty"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.password.valid  && signupForm.controls.password.dirty">
+      <p>Your password needs more than 6 characters.</p>
+    </ion-item>
+
+    <button ion-button block type="submit">
+      Create an Account
+    </button>
+
+  </form>
+
+</ion-content>
